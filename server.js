@@ -3,7 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var app = express();
 
-var content={
+var articleone={
   title: 'Article one | Asmita Mutgekar',
   heading: 'Article one',
   date: 'August 15 2017',
