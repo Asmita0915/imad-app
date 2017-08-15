@@ -7,7 +7,7 @@ var articleone={
   title: 'Article one | Asmita Mutgekar',
   heading: 'Article one',
   date: 'August 15 2017',
-  cotentstring:     ` <p>
+  cotent:     ` <p>
             This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.
         </p>
         <p>
@@ -21,7 +21,7 @@ var articleone={
 function createtemplate(data){
 
 var date=data.date;
-var content = data.contentstring;
+var content = data.content;
 var heading=data.heading;
 var title=data.tile;
 
