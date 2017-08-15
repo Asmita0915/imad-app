@@ -4,7 +4,7 @@ var path = require('path');
 var app = express();
 
 var articles ={
-articleone: {
+'article-one': {
     title: 'Article one | Asmita Mutgekar',
     heading: 'Article one',
     date: 'August 15 2017',
@@ -18,7 +18,7 @@ articleone: {
             This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.
         </p>`
 },
-articletwo:{
+'article-two':{
     title: 'Article two | Asmita Mutgekar',
     heading: 'Article two',
     date: 'August 15 2017',
@@ -27,7 +27,7 @@ articletwo:{
         </p>
         `
 },
-articlethree:{
+'article-three':{
     title: 'Article three | Asmita Mutgekar',
     heading: 'Article three',
     date: 'August 15 2017',
@@ -84,6 +84,7 @@ app.get('/', function (req, res) {
 app.get('/:articleName',function(req,res){
     //articleName==articleone
     //articles[articleName] == article[articleone]
+    var articleName=req.params.articleName;
     res.send(createtemplate(articles[articleName]));
 });
 
