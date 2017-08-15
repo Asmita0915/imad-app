@@ -3,11 +3,12 @@ var morgan = require('morgan');
 var path = require('path');
 var app = express();
 
-var articleone={
-  title: 'Article one | Asmita Mutgekar',
-  heading: 'Article one',
-  date: 'August 15 2017',
-  cotent:     ` <p>
+var articles ={
+articleone: {
+    title: 'Article one | Asmita Mutgekar',
+    heading: 'Article one',
+    date: 'August 15 2017',
+    content:     ` <p>
             This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.
         </p>
         <p>
@@ -16,14 +17,32 @@ var articleone={
         <p>
             This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.This is Article one of the web app.
         </p>`
+},
+articletwo:{
+    title: 'Article two | Asmita Mutgekar',
+    heading: 'Article two',
+    date: 'August 15 2017',
+    content:     ` <p>
+            This is Article two of the web app.This is Article two of the web app.This is Article two of the web app.
+        </p>
+        `
+},
+articlethree:{
+    title: 'Article three | Asmita Mutgekar',
+    heading: 'Article three',
+    date: 'August 15 2017',
+    content:     ` <p>
+                This is Article three of the web app.This is Article three of the web app.This is Article three of the web app.
+            </p>
+            `
+}
 };
-
 function createtemplate(data){
 
 var date=data.date;
 var content = data.content;
 var heading=data.heading;
-var title=data.tile;
+var title=data.title;
 
 var htmltemplate =`
 <html>
@@ -62,17 +81,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one',function(req,res){
-    res.send(createtemplate(articleone));
+app.get('/:articleName',function(req,res){
+    //articleName==articleone
+    //articles[articleName] == article[articleone]
+    res.send(createtemplate(articles[articleName]));
 });
 
-app.get('/article-two',function(req,res){
-     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three',function(req,res){
-     res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
