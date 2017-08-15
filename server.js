@@ -1,8 +1,15 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 var app = express();
+
+var content={
+  title: 'Article one | Asmita Mutgekar',
+  heading: 'Article one',
+  date: 'August 15 2017',
+  cotent: ''
+};
+
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
