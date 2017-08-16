@@ -3,7 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var app = express();
 
-var articles ={
+/*var articles ={
 'article-one': {
     title: 'Article one | Asmita Mutgekar',
     heading: 'Article one',
@@ -37,6 +37,7 @@ var articles ={
             `
 }
 };
+
 function createtemplate(data){
 
 var date=data.date;
@@ -73,7 +74,7 @@ var htmltemplate =`
 </html>
 `;
 return htmltemplate;
-}
+}*/
 var counter=0;
 
 app.use(morgan('combined'));
@@ -87,12 +88,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articleName',function(req,res){
+/*app.get('/:articleName',function(req,res){
     //articleName==articleone
     //articles[articleName] == article[articleone]
     var articleName=req.params.articleName;
     res.send(createtemplate(articles[articleName]));
-});
+});*/
 
 
 app.get('/ui/style.css', function (req, res) {
