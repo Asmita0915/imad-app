@@ -7,7 +7,9 @@ var button=document.getElementById("counter");
         if(request.readystate === XMLHttpRequest.DONE){
             if(request.status === 200){
                var counter=request.responseText;
-               document.getElementById("count").innerHTML=counter.toString();
+               var span=document.getElementById("count");
+               console.log(span);
+               span.innerHTML=counter.toString()
                console.log(counter);
             }
         }
