@@ -8,9 +8,9 @@ var button=document.getElementById("counter");
         if(request.readystate === XMLHttpRequest.DONE){
             if(request.status === 200){
                var counter=request.responseText;
-               var span=document.getElementById("count");
+               var p=document.getElementById("count");
                console.log(span);
-               span.innerHTML=counter.toString();
+               p.innerHTML=counter.toString();
             }
         }
     };
