@@ -26,11 +26,15 @@ submit.onclick=function(){
     
     
 var request=new XMLHttpRequest();
+var input=document.getElementById("name");
+var data=input.value;
+var names=[];
 request.onreadystatechange = function(){
     if(request.readyState === XMLHttpRequest.DONE){
         if(request.status === 200){
-            var input=document.getElementById("name");
-            var data=input.value;
+            
+            var name=request.responseText;
+            names=JSON.parse(name);
             var list='';
             for(var i=0;i<names.length;i++){
                 list+='<li>'+names[i]+'</li>';
