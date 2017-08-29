@@ -18,3 +18,11 @@ var button=document.getElementById("counter");
    request.open('GET','http://asmitamutgekar.imad.hasura-app.io/counter',true);
    request.send(null);
 };
+
+//Submit name;
+var input=document.getElementById("name");
+var data=input.value;
+var submit=document.getElementById("submit_b");
+submit.onclick=function(){
+    
+}
