@@ -5,8 +5,8 @@ var button=document.getElementById("counter");
     var request = new XMLHttpRequest();
     
     request.onreadystatechange = function() {
-        console.log(request.readystate+"||||"+XMLHttpRequest.DONE);
-        if(request.readystate === XMLHttpRequest.DONE){
+        //console.log(request.readyState+"||||"+XMLHttpRequest.DONE);
+        if(request.readyState === XMLHttpRequest.DONE){
             
             if(request.status === 200){
                var counter=request.responseText;
